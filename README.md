@@ -27,8 +27,6 @@ Data Structures and Algorithms (DSA) is a discipline that focuses on organizing 
 ---
 ## Types of Data Structures and Basic Operations Performed on Data Structures
 
-![Image](https://dotnettrickscloud.blob.core.windows.net/article/data%20structures/3720231123132517.webp)
-
 ![Image](https://i.pinimg.com/736x/74/8b/ad/748bade7cc70b81894dbb8b65257742b.jpg)
 
 ![Image](https://www.scaler.com/topics/images/data-structure-operations-thumbnail.webp)
@@ -300,8 +298,6 @@ Stack: [10, 20]
 
 ![Image](https://miro.medium.com/v2/resize%3Afit%3A1400/1%2AQyQG0uBovPZH9xzYEx_bMQ.png)
 
-![Image](https://www.btechsmartclass.com/data_structures/ds_images/Double%20Ended%20Q.png)
-
 ![Image](https://miro.medium.com/1%2AtuT-pn42vOOU2uNbyGiqzg.png)
 
 ![Image](https://cdn.programiz.com/sites/tutorial2program/files/deque-insert-front-2.png)
@@ -397,8 +393,6 @@ REAR  → 2
 ---
 
 ## DELETE SECOND LAST ELEMENT FROM A QUEUE (Algorithm)
-
-![Image](https://dotnettrickscloud.blob.core.windows.net/article/data%20structures/3720240720175248.webp)
 
 ![Image](https://www.tutorialride.com/images/data-structures/queue-array.jpeg)
 
@@ -1502,199 +1496,6 @@ Before balancing (LL case):
 | Search speed      | Slower | Faster   |
 | Complexity        | Simple | Complex  |
 
-
----
-
-1️⃣5️⃣ GRAPH – BFS (10 MARKS)
-
-## GRAPH – BFS (Breadth First Search)
-
-![Image](https://miro.medium.com/1%2AVM84VPcCQe0gSy44l9S5yA.jpeg)
-
-![Image](https://www.btechsmartclass.com/data_structures/ds_images/BFS.jpg)
-
-![Image](https://deen3evddmddt.cloudfront.net/uploads/content-images/bfs.webp)
-
-![Image](https://tutorialhorizon.com/static/media/algorithms/2015/05/Graph-BFS.png)
-
-**Breadth First Search (BFS)** is a **graph traversal algorithm** that explores vertices **level by level**, starting from a given source vertex.
-It uses a **QUEUE** data structure.
-
-
-## 🔹 Key Idea
-
-> Visit all **adjacent (neighbor) vertices first**, then move to the next level.
-
-
-
-## 🔹 Algorithm: BFS(G, START)
-
-**Input:**
-
-* Graph `G` (Adjacency Matrix / List)
-* Starting vertex `START`
-
-**Step 1:** Initialize an empty **QUEUE**
-
-**Step 2:** Mark all vertices as **NOT VISITED**
-
-**Step 3:**
-
-* Mark `START` as **VISITED**
-* Enqueue `START`
-
-**Step 4:** While **QUEUE is not empty**
-
-1. Dequeue a vertex `V`
-2. Visit `V`
-3. For each adjacent vertex `W` of `V`
-
-   * If `W` is **NOT VISITED**
-
-     * Mark `W` as VISITED
-     * Enqueue `W`
-
-**Step 5:** **STOP**
-
-
-
-## 🔹 Example
-
-### Graph
-
-```text id="bfs1"
-    A —— B —— C
-    |     |
-    D —— E
-```
-
-### BFS Traversal (Start = A)
-
-```text id="bfs2"
-A → B → D → C → E
-```
-
-
-## 🔹 Time Complexity
-
-| Representation   | Complexity   |
-| ---------------- | ------------ |
-| Adjacency List   | **O(V + E)** |
-| Adjacency Matrix | **O(V²)**    |
-
-`V` = vertices, `E` = edges
-
-
-## 🔹 Space Complexity
-
-* **O(V)** (queue + visited array)
-
-
-## 🔹 Applications of BFS
-
-* Shortest path in **unweighted graphs**
-* Level-order traversal in trees
-* Social networks (friends at same level)
-* Web crawling
-* Broadcasting in networks
-
-
-## 🔹 BFS vs DFS
-
-| BFS                  | DFS                              |
-| -------------------- | -------------------------------- |
-| Uses Queue           | Uses Stack / Recursion           |
-| Level-wise traversal | Depth-wise traversal             |
-| Finds shortest path  | Does not guarantee shortest path |
-
----
-
-1️⃣6️⃣ GRAPH – DFS (10 MARKS)
-
-## GRAPH – DFS (Depth First Search)
-
-![Image](https://he-s3.s3.amazonaws.com/media/uploads/9fa1119.jpg)
-
-![Image](https://11011110.github.io/blog/assets/2013/stack-traversal.svg)
-
-![Image](https://miro.medium.com/1%2AjO0Kj8eImNbFROtKNiLaBA.png)
-
-![Image](https://ik.imagekit.io/upgrad1/abroad-images/imageCompo/images/What_Is_Depth_First_Search_AlgorithmM3FQLI.png)
-
-**Depth First Search (DFS)** is a **graph traversal algorithm** that explores a path **as deep as possible** before backtracking.
-It can be implemented using **recursion** or an explicit **stack**.
-
----
-
-## 🔹 Key Idea
-
-> Go **deep first**, then backtrack when no unvisited adjacent vertex remains.
-
----
-
-## 🔹 Algorithm: DFS(G, START)
-
-### **Recursive DFS**
-
-**Step 1:** Mark all vertices as **NOT VISITED**
-
-**Step 2:** Call `DFS_VISIT(START)`
-
----
-
-### **Algorithm: DFS_VISIT(V)**
-
-1. Mark `V` as **VISITED**
-2. Visit `V`
-3. For each adjacent vertex `W` of `V`
-
-   * If `W` is **NOT VISITED**
-
-     * Call `DFS_VISIT(W)`
-
----
-
-## 🔹 Example
-
-### Graph
-
-```text id="dfs1"
-    A —— B —— C
-    |     |
-    D —— E
-```
-
-### DFS Traversal (Start = A)
-
-```text id="dfs2"
-A → B → C → E → D
-```
-
-*(Order may vary depending on adjacency list)*
-
-## 🔹 Time Complexity
-
-| Representation   | Complexity   |
-| ---------------- | ------------ |
-| Adjacency List   | **O(V + E)** |
-| Adjacency Matrix | **O(V²)**    |
-
-`V` = vertices, `E` = edges
-
-
-## 🔹 Space Complexity
-
-* **O(V)** (recursion stack or explicit stack)
-
-
-## 🔹 Applications of DFS
-
-* Cycle detection
-* Topological sorting
-* Finding connected components
-* Maze solving
-* Path existence problems
-
 ---
 
 ## 🔹 DFS vs BFS
@@ -1794,77 +1595,6 @@ A **Minimum Spanning Tree (MST)** of a connected, weighted, undirected graph is 
 | Vertex-based            | Edge-based               |
 | Grows one tree          | Builds forest            |
 | Better for dense graphs | Better for sparse graphs |
-
----
-
-1️⃣9️⃣ KRUSKAL’S ALGORITHM (10 MARKS)
-
-## KRUSKAL’S ALGORITHM (Minimum Spanning Tree)
-
-![Image](https://he-s3.s3.amazonaws.com/media/uploads/6322896.jpg)
-
-![Image](https://www.researchgate.net/publication/376452458/figure/fig2/AS%3A11431281223563712%401707793754075/Illustrated-steps-of-Kruskals-algorithm.png)
-
-![Image](https://miro.medium.com/1%2ALdQR5KFHSYs2mcJec6Fzfg.png)
-
-![Image](https://scaler.com/topics/images/examples-of-kruskal-algorigthm.webp)
-
-**Kruskal’s Algorithm** is a **greedy algorithm** used to find the **Minimum Spanning Tree (MST)** of a **connected, weighted, undirected graph**.
-It builds the MST by **selecting edges in increasing order of weight**, ensuring **no cycles** are formed.
-
----
-
-## 🔹 Key Idea
-
-> Always choose the **minimum-weight edge** that does **not form a cycle**.
-
----
-
-## 🔹 Algorithm: KRUSKAL(G)
-
-**Input:**
-
-* Graph `G(V, E)` with weighted edges
-
-**Step 1:** Sort all edges in **non-decreasing order of weight**
-
-**Step 2:** Initialize
-
-* MST = ∅
-* Each vertex as a **separate set** (Disjoint Set / Union-Find)
-
-**Step 3:** For each edge `(u, v)` in sorted order
-
-1. If `u` and `v` are in **different sets**
-
-   * Add `(u, v)` to **MST**
-   * **Union** the sets of `u` and `v`
-2. Else
-
-   * Discard the edge (cycle detected)
-
-**Step 4:** Stop when MST has **(V − 1) edges**
-
-
-## 🔹 Characteristics of Kruskal’s Algorithm
-
-| Feature                     | Description      |
-| --------------------------- | ---------------- |
-| Algorithm Type              | Greedy           |
-| Edge-based                  | ✅ Yes            |
-| Uses Sorting                | ✅ Yes            |
-| Uses Union-Find             | ✅ Yes            |
-| Works on Disconnected Graph | ✅ (Gives Forest) |
-
-
-## 🔹 Kruskal vs Prim (Quick View)
-
-| Kruskal                         | Prim                  |
-| ------------------------------- | --------------------- |
-| Edge-based                      | Vertex-based          |
-| Sort edges                      | Pick min key vertex   |
-| Best for sparse graphs          | Best for dense graphs |
-| Can work on disconnected graphs | Needs connected graph |
 
 ---
 
@@ -2169,8 +1899,6 @@ Space complexity measures how efficiently an algorithm uses memory. Along with t
 
 2️⃣4️⃣ ORDERS OF COMPLEXITY (10 MARKS)
 ## ORDERS OF COMPLEXITY (10 Marks)
-
-![Image](https://paper-attachments.dropbox.com/s_2D428973624E7FC84C7D69D11421DE762BEA6B6F3361231FCDCAE0425D14526F_1664885448372_Untitled.drawio%2B17.png)
 
 ![Image](https://miro.medium.com/1%2AdWet_YU-5072Kcko7LzsuQ.jpeg)
 
