@@ -1,4 +1,4 @@
-# dsa_imp_exam
+# Dsa_imp_exam
 
 ### 1️⃣ WHAT IS DSA AND WHY DO WE NEED DSA? (5 MARKS)
 
