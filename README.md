@@ -211,14 +211,7 @@ An array is a linear data structure used to store multiple elements of the same 
 A sparse matrix is a matrix in which most of the elements are zero.
 If the number of zero elements is greater than the number of non-zero elements, the matrix is called sparse.
 
-Example:
 
-\begin{bmatrix}
-0 & 0 & 5 & 0 \\
-0 & 0 & 0 & 0 \\
-8 & 0 & 0 & 0 \\
-0 & 0 & 0 & 3
-\end{bmatrix}
 
 Here, most entries are 0 → so it is a sparse matrix.
 
@@ -228,6 +221,16 @@ Here, most entries are 0 → so it is a sparse matrix.
 If we store it normally (2D array), we waste memory storing many zeros.
 
 So we use special representations to:
+
+Example:
+
+\begin{bmatrix}
+0 & 0 & 5 & 0 \\
+0 & 0 & 0 & 0 \\
+8 & 0 & 0 & 0 \\
+0 & 0 & 0 & 3
+\end{bmatrix}
+
 
 Save memory
 
