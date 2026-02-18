@@ -206,6 +206,129 @@ An array is a linear data structure used to store multiple elements of the same 
 
 • Used in database indexing
 
+🔹 Sparse Matrix
+
+A sparse matrix is a matrix in which most of the elements are zero.
+If the number of zero elements is greater than the number of non-zero elements, the matrix is called sparse.
+
+Example:
+
+\begin{bmatrix}
+0 & 0 & 5 & 0 \\
+0 & 0 & 0 & 0 \\
+8 & 0 & 0 & 0 \\
+0 & 0 & 0 & 3
+\end{bmatrix}
+
+Here, most entries are 0 → so it is a sparse matrix.
+
+
+🔹 Why Sparse Matrix Representation?
+
+If we store it normally (2D array), we waste memory storing many zeros.
+
+So we use special representations to:
+
+Save memory
+
+Reduce computation time
+
+Store only non-zero elements
+
+
+
+🔹 Methods of Sparse Matrix Representation
+
+1️⃣ Triplet (3-Tuple) Representation
+
+Concept:
+
+Store only:
+
+Row index
+
+Column index
+
+Value
+
+
+Format:
+
+Row	Column	Value
+
+
+
+The first row stores:
+
+Total rows
+
+Total columns
+
+Total non-zero elements
+
+
+Example:
+
+Matrix:
+
+\begin{bmatrix}
+0 & 0 & 5 \\
+0 & 7 & 0 \\
+0 & 0 & 9
+\end{bmatrix}
+
+Non-zero elements:
+
+(0,2) → 5
+
+(1,1) → 7
+
+(2,2) → 9
+
+
+Triplet form:
+
+Row	Col	Value
+
+3	3	3
+0	2	5
+1	1	7
+2	2	9
+
+
+🔹 Algorithm to Convert Normal Matrix to Triplet Form
+
+Step 1:
+
+Read number of rows (m) and columns (n)
+
+Step 2:
+
+Count non-zero elements → let it be k
+
+Step 3:
+
+Create a matrix B[k+1][3]
+
+Step 4:
+
+Store:
+
+B[0][0] = m
+B[0][1] = n
+B[0][2] = k
+
+Step 5:
+
+Traverse original matrix
+
+If element A[i][j] ≠ 0:
+
+B[t][0] = i
+B[t][1] = j
+B[t][2] = A[i][j]
+t++
+
 ---
 
 4️⃣ STACK – PUSH & POP OPERATIONS (10 MARKS)
