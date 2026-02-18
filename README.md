@@ -221,11 +221,12 @@ In general, a matrix is considered **sparse** if:
 ### 📌 Example of Sparse Matrix
 
 Matrix A (4 × 4):
-
+```c
 0  0  5  0
 0  0  0  0
 0  8  0  0
 0  0  0  6
+```
 
 Here, most elements are **0**, so this is a **sparse matrix**.
 
@@ -268,12 +269,12 @@ First row stores:
 ### 📌 Example
 
 Original Matrix (4 × 4):
-
+```c
 0  0  5  0
 0  0  0  0
 0  8  0  0
 0  0  0  6
-
+```
 Non-zero elements:
 • 5 at (0,2)
 • 8 at (2,1)
