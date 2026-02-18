@@ -206,131 +206,141 @@ An array is a linear data structure used to store multiple elements of the same 
 
 • Used in database indexing
 
-🔹 Sparse Matrix
-
-A sparse matrix is a matrix in which most of the elements are zero.
-If the number of zero elements is greater than the number of non-zero elements, the matrix is called sparse.
+## SPARSE MATRIX & SPARSE MATRIX REPRESENTATION
 
 
+## 🔹 What is a Sparse Matrix?
 
-Here, most entries are 0 → so it is a sparse matrix.
+A **Sparse Matrix** is a matrix in which the **number of zero elements is much greater than the number of non-zero elements**.
 
+In general, a matrix is considered **sparse** if:
 
-🔹 Why Sparse Matrix Representation?
-
-If we store it normally (2D array), we waste memory storing many zeros.
-
-So we use special representations to:
-
-Example:
-
-\begin{bmatrix}
-0 & 0 & 5 & 0 \\
-0 & 0 & 0 & 0 \\
-8 & 0 & 0 & 0 \\
-0 & 0 & 0 & 3
-\end{bmatrix}
+• Number of zero elements > Number of non-zero elements
 
 
-Save memory
+### 📌 Example of Sparse Matrix
 
-Reduce computation time
+Matrix A (4 × 4):
 
-Store only non-zero elements
+0  0  5  0
+0  0  0  0
+0  8  0  0
+0  0  0  6
 
-
-
-🔹 Methods of Sparse Matrix Representation
-
-1️⃣ Triplet (3-Tuple) Representation
-
-Concept:
-
-Store only:
-
-Row index
-
-Column index
-
-Value
+Here, most elements are **0**, so this is a **sparse matrix**.
 
 
-Format:
+## 🔹 Why Sparse Matrix is Needed?
 
-Row	Column	Value
+Storing all elements of a sparse matrix using a normal 2D array is **inefficient**.
+
+Problems with normal storage:
+• Wastes memory storing zeros
+• Slower processing
+• Inefficient for large matrices
+
+Solution:
+➡️ Store **only non-zero elements** using **Sparse Matrix Representation**
+
+## 🔹 Sparse Matrix Representation
+
+Sparse matrix representation stores **only meaningful (non-zero) values** along with their **row and column indices**.
 
 
+## 🔹 Common Sparse Matrix Representations
 
-The first row stores:
+## 1️⃣ Triplet Representation (Most Important for Exams)
 
-Total rows
+This is the **most commonly used and exam-oriented method**.
 
-Total columns
+### Structure of Triplet Representation
 
-Total non-zero elements
+Each row stores:
+• Row index
+• Column index
+• Value
 
+First row stores:
+• Total number of rows
+• Total number of columns
+• Total number of non-zero elements
 
-Example:
+### 📌 Example
 
-Matrix:
+Original Matrix (4 × 4):
 
-\begin{bmatrix}
-0 & 0 & 5 \\
-0 & 7 & 0 \\
-0 & 0 & 9
-\end{bmatrix}
+0  0  5  0
+0  0  0  0
+0  8  0  0
+0  0  0  6
 
 Non-zero elements:
+• 5 at (0,2)
+• 8 at (2,1)
+• 6 at (3,3)
 
-(0,2) → 5
+### Triplet Form
 
-(1,1) → 7
+| Row | Column | Value |
+| --- | ------ | ----- |
+| 4   | 4      | 3     |
+| 0   | 2      | 5     |
+| 2   | 1      | 8     |
+| 3   | 3      | 6     |
 
-(2,2) → 9
+Explanation:
+• First row → Matrix size and non-zero count
+• Remaining rows → Actual data
+
+## 🔹 Advantages of Triplet Representation
+
+• Saves memory
+• Easy to implement
+• Efficient for sparse data
+• Reduces storage from O(m×n) to O(k), where k = non-zero elements
+
+## 🔹 Disadvantages of Triplet Representation
+
+• Slower access compared to array
+• Searching an element takes more time
+• Not suitable for frequent random access
+
+## 2️⃣ Linked List Representation (Brief)
+
+• Each non-zero element is stored as a node
+• Node contains:
+– Row index
+– Column index
+– Value
+– Link to next node
+
+Used when:
+• Dynamic insertion/deletion is required
+
+## 🔹 Comparison: Normal Matrix vs Sparse Matrix
+
+| Feature    | Normal Matrix              | Sparse Matrix                 |
+| ---------- | -------------------------- | ----------------------------- |
+| Storage    | Stores all elements        | Stores only non-zero elements |
+| Memory     | High                       | Low                           |
+| Efficiency | Poor for large sparse data | High                          |
+| Use case   | Dense matrices             | Large sparse matrices         |
 
 
-Triplet form:
+## 🔹 Applications of Sparse Matrix
 
-Row	Col	Value
+• Graph representation (Adjacency Matrix)
+• Scientific computing
+• Image processing
+• Machine learning
+• Network routing
+• Big data applications
 
-3	3	3
-0	2	5
-1	1	7
-2	2	9
+---
 
+## 🔹 One-Line Exam Answer (Very Important)
 
-🔹 Algorithm to Convert Normal Matrix to Triplet Form
-
-Step 1:
-
-Read number of rows (m) and columns (n)
-
-Step 2:
-
-Count non-zero elements → let it be k
-
-Step 3:
-
-Create a matrix B[k+1][3]
-
-Step 4:
-
-Store:
-
-B[0][0] = m
-B[0][1] = n
-B[0][2] = k
-
-Step 5:
-
-Traverse original matrix
-
-If element A[i][j] ≠ 0:
-
-B[t][0] = i
-B[t][1] = j
-B[t][2] = A[i][j]
-t++
+> A sparse matrix is a matrix with a large number of zero elements, and it is efficiently represented by storing only non-zero elements using methods like triplet representation.
 
 ---
 
